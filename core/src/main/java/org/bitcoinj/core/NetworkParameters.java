@@ -60,6 +60,9 @@ public abstract class NetworkParameters {
     /** Unit test network. */
     public static final String ID_UNITTESTNET = "org.bitcoinj.unittest";
 
+    /** The string returned by getId() for the Qtum mainnet. */
+    public static final String ID_QTUM_MAINNET = "org.bitcoinj.qtum_mainnet";
+
     /** The string used by the payment protocol to represent the main net. */
     public static final String PAYMENT_PROTOCOL_ID_MAINNET = "main";
     /** The string used by the payment protocol to represent the test net. */
@@ -224,6 +227,8 @@ public abstract class NetworkParameters {
             return UnitTestParams.get();
         } else if (id.equals(ID_REGTEST)) {
             return RegTestParams.get();
+        } else if (id.equals(ID_QTUM_MAINNET)){
+            return QtumMainNetParams.get();
         } else {
             return null;
         }
